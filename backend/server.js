@@ -12,7 +12,12 @@ import { app, server } from "./socket/socket.js"
 dotenv.config();
 const port = process.env.PORT || 3000;
 const __dirname = path.resolve()
-app.use(cors())
+const corsOptions = {
+    origin: "https://skyzik-chat-application.vercel.app/", // Replace with your actual frontend URL
+    methods: ["GET", "POST"],
+    credentials: true, // Allow credentials (cookies)
+};
+app.use(cors(corsOptions));
 app.use(express.json()); //  Middleware for parsing JSON bodies
 app.use(cookieParser()) // Adds middleware that parses cookies and exposes them on req.cookies
 
