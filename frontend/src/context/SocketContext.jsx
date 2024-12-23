@@ -14,8 +14,10 @@ export const SocketContextProvider = ({ children }) => {
 
   useEffect(() => {
     // init socket client
+    console.log("Authenticated User:", authUser );
     if (authUser) {
-      const socket = io("https://skyzik-chat-application.onrender.com/", {
+      console.log("User  ID before socket connection:", authUser .id);
+      const socket = io("https://skyzik-chat-application.onrender.com/  ", {
         query: {
           userId: authUser.id,
         },
