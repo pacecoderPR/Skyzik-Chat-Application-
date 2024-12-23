@@ -1,4 +1,5 @@
 import express from "express";
+console.log("INSIDE USER ROUTE");
 import protectRoute from "../middleware/protectRoute.js";
 import { getUsersForSidebars } from "../controllers/userController.js";
 const router = express.Router();

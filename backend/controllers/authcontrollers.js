@@ -37,6 +37,7 @@ export const signUp = async (req, res) => {
                 gender: newUser.gender,
                 profilepic: newUser.profilepic
             })
+            console.log("New user is saved");
         } else {
             res.status(400).json({ error: "Invalid User Data" });
         }

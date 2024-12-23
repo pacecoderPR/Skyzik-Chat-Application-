@@ -23,18 +23,22 @@ const useSignup = () => {
                 body: JSON.stringify({ fullName, username, password, confirmPassword: confirmpassword, gender })
             });
             const data = await res.json();
+            console.log(data);
             if (data.error) {
                 throw new Error(data.error)
             }
             // localstorage
+            console.log(data);
             localStorage.setItem("chat-user", JSON.stringify(data))
             //context
             setAuthUser(data)
         }
         catch (error) {
+            console.log(error.message)
             toast.error(error.message);
         }
         finally {
+            console.log("PRI")
             setLoading(false);
         }
     }
