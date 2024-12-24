@@ -16,10 +16,10 @@ export const SocketContextProvider = ({ children }) => {
     // init socket client
     console.log("Authenticated User:", authUser );
     if (authUser) {
-      console.log("User  ID before socket connection:", authUser .id);
+      console.log("User  ID before socket connection:", authUser._id);
       const socket = io("https://skyzik-chat-application.onrender.com/  ", {
         query: {
-          userId: authUser.id,
+          userId: authUser._id,
         },
       });
       setSocket(socket);

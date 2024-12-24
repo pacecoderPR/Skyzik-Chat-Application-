@@ -9,7 +9,7 @@ const useSendMessage = () => {
         setLoading(true);
         try {
 
-            const res = await fetch(`https://skyzik-chat-application.onrender.com/api/message/send/${selectedConversation._id}`, {
+            const res = await fetch(`http://localhost:4000/api/message/send/${selectedConversation._id}`, {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message })
