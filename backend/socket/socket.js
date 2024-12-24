@@ -8,7 +8,8 @@ const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
         origin: "https://skyzik-chat-application.vercel.app/",
-        methods: ["GET", "POST"]
+        methods: ["GET", "POST"],
+        credentials:true
     }
 })
 
