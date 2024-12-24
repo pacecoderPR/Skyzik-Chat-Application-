@@ -7,7 +7,9 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "https://skyzik-chat-application.vercel.app/",
+        origin: ["https://skyzik-chat-application.vercel.app",
+             "https://skyzik-chat-application-o1a45vfoz-pritesh-rajpurohits-projects.vercel.app"
+        ],
         methods: ["GET", "POST"],
         credentials:true
     }

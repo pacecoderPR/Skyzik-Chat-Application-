@@ -13,7 +13,10 @@ dotenv.config();
 const port = process.env.PORT || 3000;
 const __dirname = path.resolve()
 const corsOptions = {
-    origin: "https://skyzik-chat-application.vercel.app/", // Replace with your actual frontend URL
+    origin: [
+        "https://skyzik-chat-application.vercel.app",
+         "https://skyzik-chat-application-o1a45vfoz-pritesh-rajpurohits-projects.vercel.app" // Replace with your actual frontend URL
+    ],
     methods: ["GET", "POST"],
     credentials: true, // Allow credentials (cookies)
 };
